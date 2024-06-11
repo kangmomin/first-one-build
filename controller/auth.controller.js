@@ -17,13 +17,7 @@ const common_1 = require("@nestjs/common");
 const process = require("process");
 let AuthController = class AuthController {
     getAuthPage(res) {
-        res.send('' +
-            '<form method="post">' +
-            '<label>' +
-            '<input type="password" name="password"/>' +
-            '<button type="submit">Login</button>' +
-            '</label>' +
-            '</form>');
+        return {};
     }
     login(req, res, body) {
         if (body.password === process.env.SECRET_PASSWORD) {
@@ -36,6 +30,7 @@ let AuthController = class AuthController {
 exports.AuthController = AuthController;
 __decorate([
     (0, common_1.Get)(),
+    (0, common_1.Render)("auth/password"),
     __param(0, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),

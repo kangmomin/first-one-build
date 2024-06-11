@@ -22,7 +22,7 @@ async function bootstrap() {
     app.setViewEngine("hbs");
     app.use((0, express_1.json)({ limit: '50mb' }));
     hbs.registerHelper("multiple", (index, value) => {
-        return (value / index * 200).toFixed(1).toLocaleString();
+        return (value / (index * 200)).toFixed(1).toLocaleString();
     });
     hbs.registerHelper("locale", (index) => {
         return index.toLocaleString();
