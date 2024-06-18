@@ -27,7 +27,7 @@ let ProductController = class ProductController {
     async createProduct(createProductDto) {
         let s = await this.productService.createProduct(createProductDto);
         return {
-            status: s !== "ok" ? "success" : "conflict"
+            status: s === "ok" ? "success" : "conflict"
         };
     }
     async updateProduct(id) {
